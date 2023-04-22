@@ -1,10 +1,12 @@
 # Atividades
 > Repositório dedicado às atividades de programação do módulo 6 da turma de engenharia da computação.
 
-## Semana 1 :owlbert-reading:
+## Semana 1 
 Como solicitado no autoestudo "Turtlesim: simulando um ambiente robótico integrado no ROS", abaixo vê-se o vídeo relativo a configuração do ambiente ROS. 
 
-https://user-images.githubusercontent.com/99201276/232628643-728ef428-16b5-4cb9-854c-2f5ec23b607a.mp4
+https://user-images.githubusercontent.com/99201276/233801080-4c85679f-b142-444e-9562-f4c20c9f161d.mp4
+
+[LINK para o vídeo no Youtube](https://youtu.be/g1h_C9zxKB0)
 
 Como é possível ubservar, utilizando o Windows Subsystem for Linux (WSL), foi criado um ambiente Linux e neste, utilizando o sistema operacional Ubuntu, pudemos fazer a execução dos pacotes do Software Robot Operating System (ROS), para a o desenvolvimento com robôs, requisito para a progressão deste módulo do curso. 
 
@@ -54,9 +56,14 @@ source /opt/ros/humble/setup.bash
 ros2 run turtlesim turtlesim_node
 ``` 
 
-Então, para que possamos movimentar a tartaruga a livre e espontânea vontade, utilizando o teclado, utilizaremos o seguinte comando em outro terminal Ubuntu: 
+Então, para que possamos movimentar a tartaruga, utilizando um código pré-definido para movimentação, utilizaremos o seguinte comando em outro terminal Ubuntu: 
 ```bash 
 source /opt/ros/humble/setup.bash
-ros2 run turtlesim turtle_teleop_key
+cd Github/M6T2-Atividades-Caio/semana-1
+python3 exercise.py
 ``` 
 Obtendo assim o resultado como mostrado no vídeo anteriormente.
+
+Por fim, a imagem que se segue é aquela gerada pelo script python:
+
+![Print do Pendulo](https://user-images.githubusercontent.com/99201276/233801425-5848acbc-1382-403a-ae36-d9ad05c8fa68.jpg)

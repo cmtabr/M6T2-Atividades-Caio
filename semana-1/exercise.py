@@ -6,13 +6,13 @@ from turtlesim.msg import Pose
 from turtlesim.srv import SetPen
 from functools import partial
 
-class PendularDraw(Node):
+class PendularDraw(Node): # Instancia do nó que sera utilizado para fazer a comunicação 
     def __init__(self):
-        super().__init__('pendular_draw')
-        self.previous_x_ = 9
+        super().__init__('pendular_draw') 
+        self.previous_x_ = 0
         self.publisher_ = self.create_publisher(Twist, 'turtle1/cmd_vel', 10)
         self.pose_subscriber_ = self.create_subscription(Pose, 'turtle1/pose', self.pose_callback, 10)
-        self.get_logger().info(f'Fractal Tree Draw Node has been started')
+        self.get_logger().info(f' Pendular Draw Node has been started')
         self.twist_msg_ = Twist()
 
     def pose_callback(self, pose: Pose):

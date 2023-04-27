@@ -4,9 +4,9 @@
 ## Semana 1 
 Como solicitado no autoestudo "Turtlesim: simulando um ambiente robótico integrado no ROS", abaixo vê-se o vídeo relativo a configuração do ambiente ROS. 
 
-https://user-images.githubusercontent.com/99201276/233801080-4c85679f-b142-444e-9562-f4c20c9f161d.mp4
+https://user-images.githubusercontent.com/99201276/234757012-6822c6b9-873f-4dc9-9bbc-f3e89bd3815e.mp4
 
-[LINK para o vídeo no Youtube](https://youtu.be/g1h_C9zxKB0)
+[LINK para o vídeo no Youtube](https://www.youtube.com/shorts/1VSrzrdVP3U)
 
 Como é possível ubservar, utilizando o Windows Subsystem for Linux (WSL), foi criado um ambiente Linux e neste, utilizando o sistema operacional Ubuntu, pudemos fazer a execução dos pacotes do Software Robot Operating System (ROS), para a o desenvolvimento com robôs, requisito para a progressão deste módulo do curso. 
 
@@ -66,4 +66,5 @@ Obtendo assim o resultado como mostrado no vídeo anteriormente.
 
 Por fim, a imagem que se segue é aquela gerada pelo script python:
 
-![Print do Pendulo](https://user-images.githubusercontent.com/99201276/233801425-5848acbc-1382-403a-ae36-d9ad05c8fa68.jpg)
+![Print do Pendulo](https://user-images.githubusercontent.com/99201276/234754627-31efeeb3-a541-46f2-81d5-de1015d4c1dc.png)
+

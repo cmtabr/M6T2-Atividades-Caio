@@ -27,12 +27,15 @@ class PendularDraw(Node): # Instancia do nó que sera utilizado para fazer a com
         
     # Callback que é chamada quando uma mensagem Pose é recebida
     def pose_callback(self, pose: Pose):
-        if pose.x > 9.0 or pose.x < 2.0 or pose.y > 9.0 or pose.y < 2.0:
+        if pose.x > 8.0 or pose.x < 3.0 or pose.y > 8.0 or pose.y < 3.0:
             self.twist_msg_.linear.x = 1.0
+            self.twist_msg_.angular.z = 0.9
+        elif pose.x < 6 or pose.x > 5 or pose.y < 6 or pose.y> 5:
+            self.twist_msg_.linear.x = 2.0 
             self.twist_msg_.angular.z = 0.9
         else:
             self.twist_msg_.linear.x = 5.0
-            self.twist_msg_.angular.z = 0.0
+            self.twist_msg_.angular.z = -1.0
         self.publisher_.publish(self.twist_msg_) # Publica a mensagem Twist para controlar o movimento do robô
 
         if pose.x > 5.5 and self.previous_x_ <= 5.5:

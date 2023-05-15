@@ -68,3 +68,21 @@ Por fim, a imagem que se segue é aquela gerada pelo script python:
 
 ![Print do Pendulo](https://user-images.githubusercontent.com/99201276/234754627-31efeeb3-a541-46f2-81d5-de1015d4c1dc.png)
 
+## Semana 3 
+Como solicitado no autoestudo "Exercício estruturas de dados", abaixo vê-se o vídeo relativo a iniciação do ambiente de simulação, Gazebo, com os packages do TurtleBot3. 
+
+### Objetivo
+
+Demonstrar a capacidade de interagir de forma dinâmica com uma plataforma de simulação utilizando os conceitos de estrutura de dados e programação orientada à objetos, outrossim utilizando os protocolos de comunicação via publicação e subscrição em tópicos com os parâmetros de mensagens definidas (https://github.com/rticommunity/ros-data-types).
+
+### Solução 
+O código apresentado implementa um nó chamado MovingRobot, que herda a classe Node do ROS 2.
+Ele se inscreve no tópico **`odom`** para obter a posição atual do robô e utiliza uma fila para receber os pontos de destino fornecidos pelo usuário. 
+O nó calcula as velocidades linear e angular necessárias para mover o robô em direção aos pontos de destino. O método **point_callback** é responsável por esse cálculo e publicação das velocidades no tópico **`cmd_vel`**. 
+O método **position_callback** atualiza a posição atual do robô quando uma nova mensagem Odometry é recebida. 
+O método **get_user_input** obtém os pontos de destino do usuário. A função main é responsável por inicializar e executar o nó. 
+Em resumo, o código cria um nó ROS 2 que permite ao usuário fornecer pontos de destino para controlar o movimento do robô.
+
+### Vídeo 
+Abaixo você pode ver o vídeo da simulação funcionando com o código implementado
+

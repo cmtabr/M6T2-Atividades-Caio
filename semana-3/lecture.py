@@ -36,7 +36,7 @@ class MovingRobot(Node):
         # Timer para controlar a frequência de atualização
         self.timer_ = self.create_timer(
             simulation_timer, 
-            self.updated_vertex_callback
+            self.updated_point_callback
         )
         
         # Instnacia da mensagem de comando de velocidade
@@ -52,7 +52,7 @@ class MovingRobot(Node):
         self.position_queue_ = Queue()
 
 
-    def vertex_callback(self):
+    def point_callback(self):
         """
         Essa função é chamada para fazer publicações no tópico 
         'cmd_vel' para movimentação do robo
@@ -148,9 +148,9 @@ class MovingRobot(Node):
                 break
 
 
-    def updated_vertex_callback(self):
+    def updated_point_callback(self):
         """
-        Essa função é chamada para atualizar a função vertex_callback
+        Essa função é chamada para atualizar a função point_callback
         para movimentação do robo, em intervalos de 50 milisegundos. Desta
         forma a função supramencionada só é atividade quando a posição do 
         robo é conhecida, para evitar possíveis erros
@@ -159,7 +159,7 @@ class MovingRobot(Node):
         if len(self.current_pose_) == 0:
             return
 
-        self.vertex_callback()
+        self.point_callback()
 
 def main(args=None):
 

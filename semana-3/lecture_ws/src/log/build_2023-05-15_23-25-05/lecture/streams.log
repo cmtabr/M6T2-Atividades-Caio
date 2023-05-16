@@ -1,0 +1,39 @@
+[1.232s] Invoking command in '/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/lecture': PYTHONPATH=/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/prefix_override:/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lecture build --build-base /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build install --record /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/install.log --single-version-externally-managed
+[1.432s] running egg_info
+[1.433s] creating ../build/lecture/lecture.egg-info
+[1.433s] writing ../build/lecture/lecture.egg-info/PKG-INFO
+[1.433s] writing dependency_links to ../build/lecture/lecture.egg-info/dependency_links.txt
+[1.433s] writing entry points to ../build/lecture/lecture.egg-info/entry_points.txt
+[1.434s] writing requirements to ../build/lecture/lecture.egg-info/requires.txt
+[1.434s] writing top-level names to ../build/lecture/lecture.egg-info/top_level.txt
+[1.434s] writing manifest file '../build/lecture/lecture.egg-info/SOURCES.txt'
+[1.435s] reading manifest file '../build/lecture/lecture.egg-info/SOURCES.txt'
+[1.436s] writing manifest file '../build/lecture/lecture.egg-info/SOURCES.txt'
+[1.437s] running build
+[1.437s] running build_py
+[1.437s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build
+[1.437s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib
+[1.437s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib/lecture
+[1.438s] copying lecture/lecture.py -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib/lecture
+[1.438s] copying lecture/__init__.py -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib/lecture
+[1.438s] running install
+[1.438s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.438s]   warnings.warn(
+[1.439s] running install_lib
+[1.439s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture
+[1.440s] copying /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib/lecture/lecture.py -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture
+[1.440s] copying /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build/lib/lecture/__init__.py -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture
+[1.440s] byte-compiling /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture/lecture.py to lecture.cpython-310.pyc
+[1.441s] byte-compiling /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture/__init__.py to __init__.cpython-310.pyc
+[1.441s] running install_data
+[1.442s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/share/ament_index
+[1.442s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/share/ament_index/resource_index
+[1.442s] creating /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/share/ament_index/resource_index/packages
+[1.442s] copying resource/lecture -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/share/ament_index/resource_index/packages
+[1.443s] copying package.xml -> /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/share/lecture
+[1.443s] running install_egg_info
+[1.444s] Copying ../build/lecture/lecture.egg-info to /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages/lecture-0.0.0-py3.10.egg-info
+[1.445s] running install_scripts
+[1.465s] Installing lecture script to /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/lecture
+[1.466s] writing list of installed files to '/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/install.log'
+[1.489s] Invoked command in '/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/lecture' returned '0': PYTHONPATH=/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/prefix_override:/home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/install/lecture/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lecture build --build-base /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/build install --record /home/cmtabr/Github/M6T2-Atividades-Caio/semana-3/lecture_ws/src/build/lecture/install.log --single-version-externally-managed

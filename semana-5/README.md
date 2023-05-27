@@ -1,6 +1,10 @@
 # Semana 5 
 Como solicitado no autoestudo "Desenvolvimento de Filtros", abaixo vê-se o vídeo relativo à detecção de rachaduras. 
 
+
+https://github.com/cmtabr/M6T2-Atividades-Caio/assets/99201276/2cf4aafb-f046-43b1-a8a4-bdff05e62005
+
+
 # Objetivo: 
 Atestar a capacidade do aluno de realizar a detecção de imagens através da visão computacional, utilizando modelos de rede neural.
 

@@ -16,3 +16,10 @@ with open(source, 'rb+') as f:
 
 # Conclusão: 
 A atividade requisita fora realizada com o arquivo **`imgManager.py`** presente neste repositório. A partir deste script, o usuário pode realizar a gravação de vídeos através de uma câmera no próprio computador ou em outro dispositivo, além disto o código desenvolvido faz o upload destas imagens em um bucket de forma que seja possível acessar os conteúdos de cada gravação em quaisquer outros dispositivos. 
+
+# OBS: 
+Para o caso de uso pessoal deste script, é necessário criar um arquivo **`.env`** contendo: 
+```
+export SUPABASE_URL="YOUR-SUPABASE-PROJECT-URL"
+export SUPABASE_KEY="YOUR-SUPABASE-SERVICE_ROLE-API-KEY"
+```

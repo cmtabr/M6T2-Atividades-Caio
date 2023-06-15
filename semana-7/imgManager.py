@@ -5,70 +5,68 @@ import os
 from supabase import create_client, Client
 from datetime import datetime
 
-# Load environment variables
 load_dotenv()
 
-# Instantiate the camera object
+# Inicialização da câmera
 cam = cv.VideoCapture(0)
 
-# Check if the camera is connected or opened
 if not cam.isOpened():
-    print("Camera not found")
+    print("Câmera não encontrada")
     exit()
 
-# Instantiate the YOLO model
+# Carregamento do modelo YOLO
 model = YOLO('./model.pt')
 
-# Instantiate the Supabase client
+# Configurações do Supabase
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
 
-# Define the video writer object
+# Configuração do codec e criação do objeto VideoWriter para salvar o vídeo
 fourcc = cv.VideoWriter_fourcc(*'mp4v')
-
 output_folder = datetime.now().strftime("SCAN_%Y_%d_%m_%H_%M")
-
 os.makedirs(output_folder, exist_ok=True)
-
 video_path = os.path.join(output_folder, 'output.mp4')
-
 out = cv.VideoWriter(video_path, fourcc, 30.0, (640, 480))
 
+# Criação da pasta para armazenar as imagens capturadas
 image_folder = os.path.join(output_folder, 'images')
 os.makedirs(image_folder, exist_ok=True)
 
 frame_counter = 0
 
-# Loop to detect frames with cracks and record the video
+# Loop principal
 while True:
-    # Read frames where the crack is identified
+    # Leitura do próximo frame da câmera
     ret, frame = cam.read()
-
-    # Use the YOLO model to detect frames with cracks
+    
+    # Execução da detecção de objetos no frame usando o modelo YOLO
     result = model.predict(frame, conf=0.6)
 
     if ret:
-        # Generate a "red box" overlay showing the detection results
+        # Criação do frame com os resultados da detecção
         frame_result = result[0].plot()
 
+        # Nome do arquivo de imagem
         image_filename = f"image_{frame_counter}.jpg"
 
         frame_counter += 1
 
-        # Write the frame result to the video
+        # Salva o frame no vídeo
         out.write(frame_result)
 
-        cv.imshow("Results", frame_result)
+        # Exibe o frame com os resultados
+        cv.imshow("Resultados", frame_result)
 
+        # Verifica se a tecla 'q' foi pressionada para sair do loop
         if cv.waitKey(1) == ord('q'):
             break
 
-        # Save the image locally
+        # Salva o frame como uma imagem
         image_path = os.path.join(image_folder, image_filename)
         cv.imwrite(image_path, frame_result)
 
-        # Upload the image to Supabase storage
+        # Faz upload da imagem para o Supabase
         with open(image_path, 'rb') as f:
             try:
                 res = supabase.storage.from_('images').upload(
@@ -77,17 +75,18 @@ while True:
                     {"contentType": "image/jpeg"}
                 )
                 if res.status_code != 200:
-                    print('Error uploading image:', res.text)
+                    print('Erro ao fazer upload da imagem:', res.text)
             except Exception as e:
-                print('Error uploading image:', str(e))
+                print('Erro ao fazer upload da imagem:', str(e))
 
-        # Delete the local image file
+        # Remove o arquivo de imagem
         os.remove(image_path)
 
+# Libera a câmera e fecha o objeto VideoWriter
 cam.release()
 out.release()
 
-# Upload video to Supabase storage
+# Faz upload do vídeo para o Supabase
 with open(video_path, 'rb') as f:
     try:
         res = supabase.storage.from_('videos').upload(
@@ -96,17 +95,18 @@ with open(video_path, 'rb') as f:
             {"contentType": "video/mp4"}
         )
         if res.status_code != 200:
-            print('Error uploading video:', res.text)
+            print('Erro ao fazer upload do vídeo:', res.text)
     except Exception as e:
-        print('Error uploading video:', str(e))
+        print('Erro ao fazer upload do vídeo:', str(e))
 
-# Delete the local video file
+# Remove o arquivo de vídeo
 os.remove(video_path)
 
-# Delete the image folder
+# Remove a pasta de imagens
 os.rmdir(image_folder)
 
-# Delete the output folder
+# Remove a pasta de saída
 os.rmdir(output_folder)
 
+# Fecha todas as janelas abertas
 cv.destroyAllWindows()
